@@ -24,7 +24,7 @@ export default function ProductDetailsPage() {
   
   const API_BASE_URL = window.location.hostname === 'localhost' 
   ? 'http://localhost:5000' 
-  : 'https://hardware-marketplace-fullstack.onrender.com';
+  : 'https://akcomputers-1.onrender.com';
 
   useEffect(() => {
     async function fetchProductDetails() {

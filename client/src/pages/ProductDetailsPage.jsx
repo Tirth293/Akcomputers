@@ -9,9 +9,7 @@ import { getRating, getReviewCount } from '../utils/productMeta';
 import { getWhatsappPriceLink } from '../utils/whatsapp';
 
 // Define your backend Render destination domain absolute URL prefix
-const API_BASE_URL = window.location.hostname === 'localhost' 
-  ? '' 
-  : 'https://your-backend-app.onrender.com'; // Replace with your actual live Render link
+const API_BASE_URL = import.meta.env.VITE_API_URL;// Replace with your actual live Render link
 
 export default function ProductDetailsPage() {
   const { idOrSlug } = useParams();
@@ -22,9 +20,7 @@ export default function ProductDetailsPage() {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   
-  const API_BASE_URL = window.location.hostname === 'localhost' 
-  ? 'http://localhost:5000' 
-  : 'https://akcomputers-1.onrender.com';
+ const API_BASE_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     async function fetchProductDetails() {

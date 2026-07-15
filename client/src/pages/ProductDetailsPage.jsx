@@ -8,10 +8,6 @@ import { useToast } from '../context/ToastContext';
 import { getRating, getReviewCount } from '../utils/productMeta';
 import { getWhatsappPriceLink } from '../utils/whatsapp';
 
-// Define your backend Render destination domain absolute URL prefix
-const API_BASE_URL = window.location.hostname === 'localhost'
-  ? ''
-  : 'https://akcomputers-xdnu.onrender.com/api'; // Replace with your actual live Render link
 
 export default function ProductDetailsPage() {
   const { idOrSlug } = useParams();
@@ -31,7 +27,7 @@ const API_BASE_URL = window.location.hostname === 'localhost'
       try {
         setLoading(true);
         // Clean absolute string layout path prevents HTML 404 proxy loops from throwing parsing exceptions
-        const res = await fetch(`${API_BASE_URL}/api/products/${idOrSlug}`);
+        const res = await fetch(`${API_BASE_URL}/products/${idOrSlug}`);
         if (res.ok) {
           const payload = await res.json();
 

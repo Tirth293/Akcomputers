@@ -12,6 +12,7 @@ const app = express();
 
 app.use(cors({
   origin: [
+    'https://akcomputersolutions.in',
     'https://akcomputers-1.onrender.com',// Your live Vercel domain
     'http://localhost:5173',                       // Local Vite testing server port
     'http://localhost:3000'                        // Alternate local web server port
